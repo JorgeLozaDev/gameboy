@@ -1,0 +1,117 @@
+:root {
+  /* colores */
+  --principal: #ff7b00;
+  --secundario: #fff;
+  --negro: #000;
+  --gris: #c3c8b1;
+  --luz-power-off: #dc0e2d8b;
+
+  /* border */
+  --border-superior: 10px;
+  /* --border-inferior:; */
+}
+body {
+  background: url(../img/fondo1.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.cajaPrincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.carcasa {
+  background-color: var(--principal);
+  width: 250px;
+  height: 400px;
+  border-radius: var(--border-superior);
+}
+
+.pantalla {
+  background-color: var(--negro);
+  position: absolute;
+  height: 175px;
+  width: 220px;
+  margin: 20px 15px 0 15px;
+  border-radius: var(--border-superior);
+}
+
+.pantallaInterior {
+  background-color: var(--gris);
+  width: 150px;
+  height: 130px;
+  position: absolute;
+  margin: 10px 20px 0 50px;
+}
+
+.luzPower {
+  position: absolute;
+  margin: 10px;
+  color: var(--secundario);
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 40px;
+  letter-spacing: 1px;
+  font-family: Helvetica, sans-serif;
+}
+.luzSuperior {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.65em;
+}
+.luzInferior {
+  font-size: 0.45em;
+}
+.luz {
+  background-color: var(--luz-power-off);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.logoGameboy {
+  position: absolute;
+  width: 100%;
+  top: 85%;
+  text-align: center;
+  color: var(--secundario);
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.textLogo1,
+.textLogo2 {
+  font-style: italic;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.textLogo2 {
+  display: inline-flex;
+}
+
+.cTxt {
+  color: #7b1e57;
+}
+.oTxt {
+  color: #56527d;
+}
+.lTxt {
+  color: #7d9273;
+  transform: rotateZ(-10deg);
+}
+.oTxt1 {
+  color: #c4c470;
+}
+.rTxt {
+  color: #27619d;
+}
