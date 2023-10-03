@@ -1,6 +1,7 @@
 :root {
   /* colores */
   --principal: #ff7b00;
+  --naranja2:#ff8e25d2;
   --secundario: #fff;
   --negro: #000;
   --gris: #c3c8b1;
@@ -114,4 +115,24 @@ body {
 }
 .rTxt {
   color: #27619d;
+}
+
+.logoNintendo {
+  margin-top: calc(100% - 3.85em);
+  display: flex;
+  justify-content: center;
+}
+.txtNintendo {
+  border: 2px solid var(--naranja2);
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -o-border-radius: 25px;
+  box-shadow: 1px 1px 0px var(--naranja2);
+  -webkit-box-shadow: 1px 1px 0px var(--naranja2);
+  -moz-box-shadow: 1px 1px 0px var(--naranja2);
+  -o-box-shadow: 1px 1px 0px var(--naranja2);
+  color: var(--naranja2);
+  padding: 3px 5px 2px 6px;
+  text-shadow: 1px 1px 0px var(--naranja2);
 }
