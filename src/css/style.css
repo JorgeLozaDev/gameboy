@@ -1,7 +1,7 @@
 :root {
   /* colores */
   --principal: #ff7b00;
-  --naranja2:#ff8e25d2;
+  --naranja2: #ff8e25d2;
   --secundario: #fff;
   --negro: #000;
   --gris: #c3c8b1;
@@ -28,24 +28,24 @@ body {
 
 .carcasa {
   background-color: var(--principal);
-  width: 250px;
-  height: 400px;
+  width: 270px;
+  height: 450px;
   border-radius: var(--border-superior);
 }
 
 .pantalla {
   background-color: var(--negro);
   position: absolute;
-  height: 175px;
-  width: 220px;
+  height: 195px;
+  width: 240px;
   margin: 20px 15px 0 15px;
   border-radius: var(--border-superior);
 }
 
 .pantallaInterior {
   background-color: var(--gris);
-  width: 150px;
-  height: 130px;
+  width: 177px;
+  height: 153px;
   position: absolute;
   margin: 10px 20px 0 50px;
 }
@@ -81,7 +81,7 @@ body {
 .logoGameboy {
   position: absolute;
   width: 100%;
-  top: 85%;
+  top: 87%;
   text-align: center;
   color: var(--secundario);
   display: flex;
@@ -136,3 +136,267 @@ body {
   padding: 3px 5px 2px 6px;
   text-shadow: 1px 1px 0px var(--naranja2);
 }
+
+.controles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pad {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  z-index: 5;
+  margin-left: 0.5em;
+}
+.controles .pad > * {
+  width: 31%;
+  height: 30%;
+  position: absolute;
+  background-color: #565e6a;
+  cursor: pointer;
+}
+.controles .pad > * i {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  font-size: 28px;
+  color: #333a4a;
+  text-shadow: 0px -0.5px 0px #aaa;
+}
+
+.up {
+  top: calc(0% + 4px);
+  left: 33%;
+  border-top: 4px solid black;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.right {
+  top: 33%;
+  left: calc(72% - 4px);
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  border-radius: 0px 5px 5px 0px;
+  box-shadow: 0px -2px 0px #888 inset;
+}
+
+.down {
+  top: calc(73% - 4px);
+  left: 33%;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px -2px 0px #888 inset;
+}
+
+.left {
+  top: 33%;
+  left: calc(0% + 2px);
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  border-radius: 5px 0px 0px 5px;
+  box-shadow: 0px -2px 0px #888 inset;
+}
+
+.middle {
+  top: 39%;
+  left: 37%;
+  z-index: -5;
+}
+
+.up:active,
+.right:active,
+.down:active,
+.left:active {
+  background: linear-gradient(to top, #565e6a 0%, #333 100%);
+}
+
+.middle::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  display: inline-block;
+  border: 1px solid #6e737a;
+  background: linear-gradient(
+    to bottom,
+    #6d7075 0%,
+    #6d7075 30%,
+    #23272f 70%,
+    #23272f 100%
+  );
+  border-radius: 50%;
+  height: 60%;
+  width: 60%;
+}
+
+.controles .a-b .b {
+  position: absolute;
+  display: inline-block;
+  font-size: 22px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  background-color: #2c313e;
+  border-bottom: 2px solid #888;
+  box-shadow: -1px 1px 5px black, 0px 0px 5px black inset;
+  text-shadow: 0px -1px 1px #888;
+  color: #2c313e;
+  text-align: center;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease-out, border 0.1s ease-out,
+    line-height 0.2s ease-out;
+}
+
+.controles .a-b .a {
+  position: absolute;
+  display: inline-block;
+  font-size: 22px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  background-color: #2c313e;
+  border-bottom: 2px solid #888;
+  box-shadow: -1px 1px 5px black, 0px 0px 5px black inset;
+  text-shadow: 0px -1px 1px #888;
+  color: #2c313e;
+  text-align: center;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease-out, border 0.1s ease-out,
+    line-height 0.2s ease-out;
+}
+
+.a-b {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 90px;
+}
+
+.a-b .b {
+  top: 35px;
+  left: 0%;
+}
+.a-b .a {
+  top: 15px;
+  right: 15px;
+}
+
+.a:active,
+.b:active {
+  box-shadow: -1px 1px 1px black, 0px 0px 5px black inset !important;
+  border-bottom: 1px !important;
+  line-height: 40px !important;
+}
+
+.select-start {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.select,
+.start {
+  display: inline-block;
+  color: var(--naranja2);
+  text-shadow: 0px -1px 0px var(--naranja2);
+  letter-spacing: -1px;
+  width: 60px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.select-start .select::before,
+.select-start .start::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+  height: 10px;
+  margin-bottom: 5px;
+  border-radius: 40%;
+  background: linear-gradient(
+    to bottom,
+    #0b0a1c 0%,
+    #0b0a1c 30%,
+    #62636c 70%,
+    #62636c 100%
+  );
+  background-repeat: no-repeat;
+  border: 2px solid #0b0a1c;
+  box-shadow: 0px -2px 1px var(--naranja2);
+  cursor: pointer;
+}
+
+.select:active::before,
+.start:active:before {
+  background: linear-gradient(to top, #565e6a 0%, #333 100%);
+}
+
+.speaker {
+  position: relative;
+  display: flex;
+  width: 75px;
+  height: 75px;
+  /* right: 15px; */
+  right: calc(100% - 460px);
+  bottom: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 100;
+  transform: skewY(-10deg);
+}
+
+.speaker .dot {
+  width: 7px;
+  height: 7px;
+  margin: 1px;
+  border-radius: 50%;
+}
+.speaker .dot.placeholder {
+  background-color: transparent;
+}
+.speaker .dot.open {
+  background-color: #0a0717;
+  box-shadow: 0px 0px 2px var(--naranja2) inset;
+}
+.speaker .dot.closed {
+  background: linear-gradient(
+    to bottom,
+    var(--principal) 0%,
+    var(--naranja2) 100%
+  );
+  box-shadow: 0px 0px 2px #7c7be0 inset;
+}
+
+.cajaOnOff {
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  transform: rotate(90deg);
+  top: calc(20% - 10px);
+  right: calc(100% - 57.35em);
+}
+
+.btnOnfOff > span {
+  width: 10px;
+  height: 13px;
+  background-color: var(--negro);
+  display: block;
+}
+
