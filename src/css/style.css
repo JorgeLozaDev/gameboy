@@ -78,6 +78,9 @@ body {
   border-radius: 50%;
 }
 
+.luzEncendida {
+  background-color: red;
+}
 .logoGameboy {
   position: absolute;
   width: 100%;
@@ -390,7 +393,7 @@ body {
   position: absolute;
   transform: rotate(90deg);
   top: calc(20% - 10px);
-  right: calc(100% - 57.35em);
+  right: -2.6em;
 }
 
 .btnOnfOff > span {
@@ -398,5 +401,29 @@ body {
   height: 13px;
   background-color: var(--negro);
   display: block;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
 }
 
+.encendido {
+  transform: translatex(450%);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.pantallaInterior img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.opciones {
+  height: 100%;
+}
+
+.opciones p {
+  border: 1px solid red;
+  margin: 0;
+}
