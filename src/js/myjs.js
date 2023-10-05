@@ -19,7 +19,7 @@ document.getElementById("onBtn").onclick = function () {
       document.getElementById("video").addEventListener("ended", function (e) {
         setTimeout(() => {
           pantalla[0].innerHTML =
-            "<div class='opciones'><div class='menu'><p>Ver video</p> <p>Sorpresa</p> <p>Sorpresa 2</p></div> <div class='instrucciones'></div> </div>";
+            "<div class='opciones'><div class='menu'><p>Ver video</p><p>Sorpresa</p><p>Sorpresa 2</p></div>           <div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
         }, 500);
       });
     }, 1000);
