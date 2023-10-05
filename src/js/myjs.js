@@ -17,14 +17,21 @@ document.getElementById("onBtn").onclick = function () {
 
       //con la siguiente funcion controlamos cuando termina el video y cuando termine queremos que se muestre otra cosa en lugar del video
       document.getElementById("video").addEventListener("ended", function (e) {
-        setTimeout(() => {
-          pantalla[0].innerHTML =
-            "<div class='opciones'><div class='menu'><p class='fondoOpcionMenu'>Ver video</p><p>Sorpresa</p><p>Sorpresa 2</p></div>           <div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
-        }, 500);
+        pantalla[0].innerHTML =
+          "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu'>Ver video</p><p>Sorpresa</p><p>Sorpresa 2</p></div>           <div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
+        // añadimos una clase para una transicion
+        pantalla[0].classList.add("fade-in");
       });
     }, 1000);
   } else {
-    console.log("apagado");
+    // console.log("apagado");
     pantalla[0].innerHTML = "";
+  }
+};
+
+document.getElementById("arriba").onclick = function () {
+  // controlamos que solo funcione cuando nuestra consola esta encendida
+  if (document.getElementById("onBtn").classList.contains("encendido")) {
+    console.log("arriba");
   }
 };
