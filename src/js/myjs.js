@@ -18,7 +18,7 @@ document.getElementById("onBtn").onclick = function () {
       //con la siguiente funcion controlamos cuando termina el video y cuando termine queremos que se muestre otra cosa en lugar del video
       document.getElementById("video").addEventListener("ended", function (e) {
         pantalla[0].innerHTML =
-          "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu'>Ver video</p><p>Sorpresa</p><p>Sorpresa 2</p></div>           <div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
+          "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Ver video</p><p data-opc='sorpresa1'>Sorpresa</p><p data-opc='sorpresa2'>Sorpresa 2</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
         // añadimos una clase para una transicion
         pantalla[0].classList.add("fade-in");
       });
@@ -78,4 +78,22 @@ document.getElementById("abajo").onclick = function () {
   }
 };
 
-document.getElementById("btnA").onclick = function () {};
+document.getElementById("btnA").onclick = function () {
+  if (document.getElementById("onBtn").classList.contains("encendido")) {
+    let menu = document.getElementById("menuOpciones");
+    let pantalla = document.getElementsByClassName("pantallaInterior");
+
+    for (let index = 0; index < menu.childNodes.length; index++) {
+      if (menu.childNodes[index].classList.contains("fondoOpcionMenu")) {
+        // console.log(menu.childNodes[index].getAttribute("data-opc"));
+        if (menu.childNodes[index].getAttribute("data-opc") == "video") {
+          //cargamos el video en el div correspondiente
+          pantalla[0].innerHTML =
+            "<video  id='video' src='src/img/pokemon.mp4'></video>";
+          // con esta funcion simulamos el click en el play del video
+          document.getElementById("video").play();
+        }
+      }
+    }
+  }
+};
