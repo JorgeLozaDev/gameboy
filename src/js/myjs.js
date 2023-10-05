@@ -32,6 +32,50 @@ document.getElementById("onBtn").onclick = function () {
 document.getElementById("arriba").onclick = function () {
   // controlamos que solo funcione cuando nuestra consola esta encendida
   if (document.getElementById("onBtn").classList.contains("encendido")) {
-    console.log("arriba");
+    // sacamos el numero total de hijos que tiene el elemento padre
+    let menu = document.getElementById("menuOpciones");
+
+    for (let index = 0; index < menu.childNodes.length; index++) {
+      if (menu.childNodes[index].classList.contains("fondoOpcionMenu")) {
+        if (index == 0) {
+          menu.childNodes[index].classList.toggle("fondoOpcionMenu");
+          menu.childNodes[menu.childNodes.length - 1].classList.toggle(
+            "fondoOpcionMenu"
+          );
+          //el motivo por el cual se usa break es... cuando le asignamos la clase al último elemento, al acabar de recorrer el loop se le quitara
+          break;
+        } else {
+          menu.childNodes[index].classList.toggle("fondoOpcionMenu");
+          menu.childNodes[index - 1].classList.toggle("fondoOpcionMenu");
+        }
+      }
+    }
   }
 };
+
+document.getElementById("abajo").onclick = function () {
+  // controlamos que solo funcione cuando nuestra consola esta encendida
+  if (document.getElementById("onBtn").classList.contains("encendido")) {
+    // sacamos el numero total de hijos que tiene el elemento padre
+    let menu = document.getElementById("menuOpciones");
+
+    for (let index = 0; index < menu.childNodes.length; index++) {
+      if (menu.childNodes[index].classList.contains("fondoOpcionMenu")) {
+        if (index == menu.childNodes.length - 1) {
+          menu.childNodes[index].classList.toggle("fondoOpcionMenu");
+          menu.childNodes[
+            index - (menu.childNodes.length - 1)
+          ].classList.toggle("fondoOpcionMenu");
+        } else {
+          console.log(index);
+          menu.childNodes[index].classList.toggle("fondoOpcionMenu");
+          menu.childNodes[index + 1].classList.toggle("fondoOpcionMenu");
+          // aqui usamos el break por el mismo motivo que lo usamos en la funcion de arriba
+          break;
+        }
+      }
+    }
+  }
+};
+
+document.getElementById("btnA").onclick = function () {};
