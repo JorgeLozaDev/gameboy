@@ -4,6 +4,7 @@
   /* colores */
   --principal: #ff7b00;
   --naranja2: #ff8e25d2;
+  --naranjaOscuro:#df6c00;
   --secundario: #fff;
   --negro: #000;
   --gris: #c3c8b1;
@@ -452,7 +453,7 @@ img {
 }
 .instrucciones div {
   display: flex;
-  gap: .21em;
+  gap: 0.21em;
   padding: 0.1em;
 }
 
@@ -460,4 +461,32 @@ img {
   font-size: 0.6em;
   border: 0;
   font-weight: bold;
+}
+
+.menu {
+  padding: 0.4em;
+}
+
+.menu p {
+  margin: 0.91em auto;
+  box-shadow: -5px 0 0 0 black, 5px 0 0 0 black, 0 -5px 0 0 black,
+    0 5px 0 0 black;
+  text-align: center;
+  position: relative;
+}
+
+.fondoOpcionMenu {
+  background-color: var(--principal);
+  color: var(--secundario);
+}
+.fondoOpcionMenu::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset -3px -3px var(--naranjaOscuro);
+  box-shadow: inset -3px -3px var(--naranjaOscuro);
 }
