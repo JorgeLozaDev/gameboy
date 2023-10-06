@@ -18,7 +18,7 @@ document.getElementById("onBtn").onclick = function () {
       //con la siguiente funcion controlamos cuando termina el video y cuando termine queremos que se muestre otra cosa en lugar del video
       document.getElementById("video").addEventListener("ended", function (e) {
         pantalla[0].innerHTML =
-          "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Ver video</p><p data-opc='sorpresa1'>Sorpresa</p><p data-opc='sorpresa2'>Sorpresa 2</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
+          "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Trailer</p><p data-opc='sorpresa1'>Canción</p><p data-opc='sorpresa2'>Sorpresa</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
         // añadimos una clase para una transicion
         pantalla[0].classList.add("fade-in");
       });
@@ -90,6 +90,8 @@ document.getElementById("btnA").onclick = function () {
           //cargamos el video en el div correspondiente
           pantalla[0].innerHTML =
             "<video preload='none' id='video' src='src/img/Pokemon.mp4'></video>";
+            // quitamos la clase del fade in, para que cuando lo volvamos a colocar nos realice el efecto correctamente
+            pantalla[0].classList.remove("fade-in");
           // con esta funcion simulamos el click en el play del video
           document.getElementById("video").play();
           //con la siguiente funcion controlamos cuando termina el video y cuando termine queremos que se muestre otra cosa en lugar del video
@@ -97,7 +99,7 @@ document.getElementById("btnA").onclick = function () {
             .getElementById("video")
             .addEventListener("ended", function (e) {
               pantalla[0].innerHTML =
-                "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Ver video</p><p data-opc='sorpresa1'>Sorpresa</p><p data-opc='sorpresa2'>Sorpresa 2</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
+                "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Trailer</p><p data-opc='sorpresa1'>Canción</p><p data-opc='sorpresa2'>Sorpresa</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
               // añadimos una clase para una transicion
               pantalla[0].classList.add("fade-in");
             });
@@ -107,6 +109,8 @@ document.getElementById("btnA").onclick = function () {
           //cargamos el video en el div correspondiente
           pantalla[0].innerHTML =
             "<video preload='none' id='video' src='src/img/hello_world.mp4' style='object-fit:fill;'></video>";
+            // quitamos la clase del fade in, para que cuando lo volvamos a colocar nos realice el efecto correctamente
+            pantalla[0].classList.remove("fade-in");
           // con esta funcion simulamos el click en el play del video
           document.getElementById("video").play();
           //con la siguiente funcion controlamos cuando termina el video y cuando termine queremos que se muestre otra cosa en lugar del video
@@ -114,14 +118,18 @@ document.getElementById("btnA").onclick = function () {
             .getElementById("video")
             .addEventListener("ended", function (e) {
               pantalla[0].innerHTML =
-                "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Ver video</p><p data-opc='sorpresa1'>Sorpresa</p><p data-opc='sorpresa2'>Sorpresa 2</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
+                "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Trailer</p><p data-opc='sorpresa1'>Canción</p><p data-opc='sorpresa2'>Sorpresa</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
               // añadimos una clase para una transicion
               pantalla[0].classList.add("fade-in");
             });
         } else {
+          // quitamos la clase del fade in, para que cuando lo volvamos a colocar nos realice el efecto correctamente
+          pantalla[0].classList.remove("fade-in");
           pantalla[0].innerHTML =
             "<img src='src/img/culo.gif'><audio controls id='musica'><source src='src/img/My_Little_Pony.mp3' type='audio/mpeg'>Your browser does not support the audio element.</audio>";
           document.getElementById("musica").play();
+          // añadimos una clase para una transicion
+          
         }
       }
     }
@@ -133,7 +141,7 @@ document.getElementById("reset").onclick = function () {
   let pantalla = document.getElementsByClassName("pantallaInterior");
   if (document.getElementById("onBtn").classList.contains("encendido")) {
     pantalla[0].innerHTML =
-      "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Ver video</p><p data-opc='sorpresa1'>Sorpresa</p><p data-opc='sorpresa2'>Sorpresa 2</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
+      "<div class='opciones'><div class='menu' id='menuOpciones'><p class='fondoOpcionMenu' data-opc='video'>Trailer</p><p data-opc='sorpresa1'>Canción</p><p data-opc='sorpresa2'>Sorpresa</p></div><div class='instrucciones'><div><p><i class='fa fa-caret-up'></i>UP</p><p>/</p><p><i class='fa fa-caret-down'></i>DOWN</p></div><div><p>A : SELECT</p></div></div></div>";
     // añadimos una clase para una transicion
     pantalla[0].classList.add("fade-in");
   }
