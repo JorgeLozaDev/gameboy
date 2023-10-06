@@ -89,7 +89,7 @@ document.getElementById("btnA").onclick = function () {
         if (menu.childNodes[index].getAttribute("data-opc") == "video") {
           //cargamos el video en el div correspondiente
           pantalla[0].innerHTML =
-            "<video  id='video' src='src/img/pokemon.mp4'></video>";
+            "<video  id='video' src='src/img/Pokemon.mp4'></video>";
           // con esta funcion simulamos el click en el play del video
           document.getElementById("video").play();
           //con la siguiente funcion controlamos cuando termina el video y cuando termine queremos que se muestre otra cosa en lugar del video
